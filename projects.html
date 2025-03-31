@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sampada N S</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #1e1e1e, #2c3e50, #0f2027, #203a43, #2c5364);
+            background-size: 300% 300%;
+            animation: movingBackground 15s infinite alternate ease-in-out;
+            overflow-x: hidden;
+        }
+        @keyframes movingBackground {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Glass Balls Animation */
+        .glass-balls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .ball {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            animation: floatBall 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatBall {
+            0% { transform: translateY(0) translateX(0) scale(1); }
+            50% { transform: translateY(50px) translateX(30px) scale(1.1); }
+            100% { transform: translateY(-50px) translateX(-30px) scale(1); }
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+            color: #a8e063;
+        }
+        h1 {
+    font-size: 50px; /* Increase the font size */
+    font-weight: bold;
+    margin-top: 20px;
+    color: #a8e063;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            border-radius: 15px;
+            width: 400px;
+            height: 570px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            height: 50%;
+            background: #121212;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .project-content h2 {
+            margin: 10px 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #a8e063;
+        }
+
+        .project-content p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-links a, .video-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #a8e063;
+            color: #121212;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .project-links a:hover, .video-button:hover {
+            background: #7bbd43;
+        }
+        .wip-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #ffcc00;
+    color: #121212;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+
+
+        @media (max-width: 600px) {
+            .project-card {
+                width: 90%;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+    
+
+        .modal-content {
+            position: relative;
+            background: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            width: 600px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
+        .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #121212;
+    background: rgba(255, 255, 255, 0.3); /* Whitish glass effect */
+    padding: 12px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+    background: rgba(249, 249, 249, 0.863); /* More visible on hover */
+    box-shadow: 0 6px 15px rgba(245, 245, 245, 0.959);
+}
+
+
+        .video-button {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 18px;
+    background: #a8e063;
+    color: #121212;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.video-button:hover {
+    background: #7bbd43;
+}
+
+
+        .close:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back</a>
+
+    <div class="glass-balls" id="glass-balls"></div>
+
+
+    <h1>PROJECTS</h1>
+    <div class="container" id="projects-container">
+        
+        <div class="project-card">
+            <div class="project-image">
+                <img src="./truthlens.jpeg" alt="AI Project">
+            </div>
+            <div class="project-content">
+                <h2>TRUTHLENS - AI-Powered Deepfake Detection</h2>
+                <p>A system to identify deepfake videos using machine learning and CNN Model with advanced facial analysis.</p>
+                <div class="wip-button">Work in Progress</div>
+            </div>
+        </div>
+        
+        
+        
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="./blindman.jpeg" alt="Blind Man Shoes">
+            </div>
+            <div class="project-content">
+                <h2>Blind Man Shoes</h2>
+                <p>A smart wearable shoe that helps visually impaired individuals detect obstacles and navigate safely.</p>
+                <div class="project-links">
+                    <button class="video-button" onclick="openModal()">Watch Video</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <video id="blindManVideo" width="100%" controls>
+                    <source src="./blindv.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="./quicktrace.jpeg" alt="QuickTrace">
+            </div>
+            <div class="project-content">
+                <h2>QuickTrace - Product Lookup & Expiry Tracking</h2>
+                <p>A barcode-based product lookup, expiry tracking, and expense management web app with automated expiry notifications.</p>
+                <div class="project-links">
+                    <a href="https://sampada0508.github.io/QUICK-TRACE/" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="./chefie.jpeg" alt="Chefie">
+            </div>
+            <div class="project-content">
+                <h2>Chefie - Chatbot for Recipe Assistance</h2>
+                <p>A chatbot that provides real-time recipe assistance, substitutions, and API integration with NLP.</p>
+                <div class="project-links">
+                    <a href="https://sampada0508.github.io/Chefie-bot/transition.html" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+                <img src="./kisansetu.jpeg" alt="Kisan Setu">
+            </div>
+            <div class="project-content">
+                <h2>Kisan Setu - Farmers Marketplace</h2>
+                <p>A platform that helps farmers sell their crops directly, eliminating the middleman. Includes virtual chatbot support and weather updates.</p>
+                <div class="wip-button">Work in Progress</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        function openModal() {
+    const modal = document.getElementById("videoModal");
+    modal.style.display = "flex";
+    document.getElementById("blindManVideo").play();
+}
+
+function closeModal(event) {
+    const modal = document.getElementById("videoModal");
+    const modalContent = document.querySelector(".modal-content");
+
+    // Close if the click is outside the modal content
+    if (event.target === modal) {
+        modal.style.display = "none";
+        document.getElementById("blindManVideo").pause();
+    }
+}
+
+// Attach event listener to modal for background click close
+document.getElementById("videoModal").addEventListener("click", closeModal);
+
+        function createGlassBalls() {
+            const container = document.getElementById("glass-balls");
+            for (let i = 0; i < 10; i++) {
+                let ball = document.createElement("div");
+                ball.classList.add("ball");
+                ball.style.left = Math.random() * 100 + "vw";
+                ball.style.top = Math.random() * 100 + "vh";
+                ball.style.animationDuration = (Math.random() * 10 + 5) + "s";
+                container.appendChild(ball);
+            }
+        }
+
+        createGlassBalls();
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

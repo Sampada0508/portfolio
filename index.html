@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sampada N S - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Moving Stars Background */
+        .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 80%);
+    }
+
+    .stars span {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 8px white;
+        animation: twinkle 4s infinite alternate, moveStars linear infinite;
+        opacity: 0.6;
+        transition: transform 0.2s linear;
+    }
+
+    @keyframes twinkle {
+        0% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 0.7; transform: scale(1.2); }
+        100% { opacity: 1; transform: scale(1.5); }
+    }
+
+    @keyframes moveStars {
+        from { transform: translateY(0); }
+        to { transform: translateY(100vh); }
+    }
+        /* Name & Image Container (Side-by-side Layout) */
+        .name-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 25vh;
+            margin-bottom: 10px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: popUp 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+        .profile-img:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+
+        .name-container h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: popUp 1.5s ease-in-out forwards;
+            opacity: 0;
+            margin: 0;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.5) translateY(50px); opacity: 0; }
+            50% { transform: scale(1.1) translateY(0); opacity: 0.8; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons button {
+        background: black;
+        color: white;
+        border: 2px solid #b7e4cf;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 0 10px rgba(120, 232, 180, 0.5);
+        position: relative;
+        overflow: hidden;
+    }
+    /* Add space between About Me section and Navigation */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;  /* Increased gap */
+    margin-bottom: 10px; /* More space before About Me */
+}
+/* Navigation Buttons - Increased Gap */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Increased space between buttons */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Adjust Button Padding for Better Appearance */
+.nav-buttons button {
+    padding: 12px 25px; /* Slightly bigger buttons for a better feel */
+    font-size: 18px; /* Increased font size for better readability */
+}
+
+
+.about-section {
+    max-width: 800px;
+    margin: 60px auto 20px auto; /* Added top margin */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(131, 224, 180, 0.817);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+
+    .nav-buttons button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(0, 255, 136, 0.4) 10%, transparent 70%);
+        transition: 0.4s ease-in-out;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    .nav-buttons button:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .nav-buttons button:hover {
+        background: black;
+        color: #a4c8b7;
+        box-shadow: 0 0 20px rgba(61, 225, 143, 0.841);
+        border-color: #597f6d;
+    }
+
+    .nav-buttons button:active {
+        transform: scale(0.95);
+    }
+
+    /* Smooth Scroll Effect */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Section Styles */
+    section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+        /* About Section with White Shadow */
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* White shadow effect */
+            backdrop-filter: blur(10px);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* Responsive Design */
+@media (max-width: 1024px) {
+    .name-container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .name-container h1 {
+        font-size: 40px;
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .about-section {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .name-container h1 {
+        font-size: 30px;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons button {
+        width: 80%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .about-section {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name-container h1 {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nav-buttons button {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .about-section {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Star Background -->
+    <div class="stars" id="star-container"></div>
+    
+    <script>
+       function createGalaxyEffect() {
+        const container = document.getElementById("star-container");
+        for (let i = 0; i < 120; i++) {  
+            let star = document.createElement("span");
+            let size = Math.random() * 15 + 3;  // Bigger stars (3px to 8px)
+            let posX = (Math.random() - 0.5) * window.innerWidth * 1.5 + window.innerWidth / 2;
+            let posY = (Math.random() - 0.5) * window.innerHeight * 1.5 + window.innerHeight / 2;
+            let duration = Math.random() * 15 + 3;
+            let opacity = Math.random() * 1.0 + 0.2;
+
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+            star.style.left = posX + "px";
+            star.style.top = posY + "px";
+            star.style.animationDuration = duration + "s";
+            star.style.opacity = opacity;
+
+            container.appendChild(star);
+        }
+    }
+    createGalaxyEffect();
+
+    function addParallaxEffect(event) {
+        let stars = document.querySelectorAll(".stars span");
+        let moveX = (event.clientX - window.innerWidth / 2) / 50;
+        let moveY = (event.clientY - window.innerHeight / 2) / 50;
+
+        stars.forEach(star => {
+            let speed = star.dataset.speed;
+            let x = moveX * speed;
+            let y = moveY * speed;
+            star.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    }
+
+    document.addEventListener("mousemove", addParallaxEffect);
+    createGalaxyEffect();
+
+    document.querySelectorAll('.nav-buttons button').forEach(button => {
+        button.addEventListener('click', function (e) {
+            const sectionId = this.getAttribute('data-section');
+            if (sectionId) {
+                e.preventDefault();
+                document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+    </script>
+
+    <!-- Name with Image (Side by Side) -->
+    <div class="name-container">
+        <img src="./red.jpeg" alt="Sampada" class="profile-img">
+        <h1>SAMPADA N S</h1>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button onclick="window.location.href='education.html'">Education</button>
+        <button onclick="window.location.href='projects.html'">Projects</button>
+        <button onclick="window.location.href='skills.html'">Skills</button>
+        <button onclick="window.location.href='certification.html'">Certifications</button>
+        <button onclick="window.location.href='contact.html'">contact</button>
+
+
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>About Me</h2>
+        <p>
+            Hello, I'm Sampada N S, a passionate individual with a keen interest in web development, software development, and continuously learning new programming skills. 
+            I believe in the power of technology to create meaningful solutions, and I enjoy exploring innovative ways to build and enhance digital experiences.
+            Apart from coding, I find joy in expressing myself through dance, writing poetry, and engaging in art and crafts. My creative side helps me approach problems 
+            with a fresh perspective, blending logic with imagination. I admire hard work more than smart work and believe that dedication and persistence are key to success. 
+            My strong soft skills, including adaptability, teamwork, and effective communication, allow me to collaborate efficiently and bring ideas to life. 
+            I strive to improve every day, learning from challenges and embracing new opportunities with enthusiasm.
+        </p>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+       
+       
+        
+
+
+
+
+

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Sampada N S</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #030324, #16213e); /* Dark blue gradient */
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #030324, #16213e, #005f73, #00ff88);
+    background-size: 300% 300%;
+    animation: backgroundAnimation 10s infinite alternate ease-in-out;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+        .container {
+            max-width: 1100px;
+            margin: 10px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .skills-section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2em;
+            text-transform: uppercase;
+            color: #00ffaa;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 3, 36, 0.7); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px); /* Glassmorphism */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6); /* Green outer glow */
+    transition: all 0.4s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 1); /* Brighter green glow on hover */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(10px); /* Glassmorphism */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6); /* Green outer glow */
+    transition: all 0.4s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 1); /* Brighter green glow on hover */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+        .chart-container {
+    width: 90px;  /* Reduced from 120px */
+    height: 90px; /* Reduced from 120px */
+    margin-bottom: 8px; /* Adjusted spacing */
+}
+@media (max-width: 768px) {
+    .chart-container {
+        width: 70px;  /* Further reduced */
+        height: 70px;
+    }
+}
+
+
+
+        .skill-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 15px;
+            }
+        }
+        @media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .skill-card {
+        padding: 20px;
+    }
+    
+    .skill-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}
+.skill-card {
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.skill-card:active {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(1, minmax(140px, 1fr));
+    }
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #030324, #16213e);
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.2);
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+.back-button:hover {
+    background: #00ff88;
+    color: #16213e;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 1);
+    transform: scale(1.1);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    
+    <a href="index.html" class="back-button">⬅ Back</a>
+
+    <div class="container">
+        <h1>My Skills</h1>
+
+        <!-- Programming Skills -->
+       <!-- Programming Skills -->
+<div class="skills-section">
+    <h2>Programming Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <img src="./html.jpeg" alt="HTML & CSS" class="skill-logo">
+            <canvas id="htmlCssChart" class="chart-container"></canvas>
+            <h3>HTML & CSS (85%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./js.jpeg" alt="JavaScript" class="skill-logo">
+            <canvas id="jsChart" class="chart-container"></canvas>
+            <h3>JavaScript (55%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./python.png" alt="Python" class="skill-logo">
+            <canvas id="pythonChart" class="chart-container"></canvas>
+            <h3>Python (60%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./react2.png" alt="React" class="skill-logo">
+            <canvas id="reactChart" class="chart-container"></canvas>
+            <h3>React (40%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./java.jpeg" alt="Java" class="skill-logo">
+            <canvas id="javaChart" class="chart-container"></canvas>
+            <h3>Java (80%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./bootstrap.jpeg" alt="Bootstrap" class="skill-logo">
+            <canvas id="bootstrapChart" class="chart-container"></canvas>
+            <h3>Bootstrap (85%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./mysql.jpeg" alt="SQL" class="skill-logo">
+            <canvas id="sqlChart" class="chart-container"></canvas>
+            <h3>SQL (70%)</h3>
+        </div>
+    </div>
+</div>
+
+        <!-- Tools & Technologies -->
+        <!-- Tools & Technologies -->
+<div class="skills-section">
+    <h2>Tools & Technologies</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <img src="./git.jpeg" alt="Git & GitHub" class="skill-logo">
+            <canvas id="gitChart" class="chart-container"></canvas>
+            <h3>Git & GitHub (75%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./vscode.jpeg" alt="VS Code" class="skill-logo">
+            <canvas id="vscodeChart" class="chart-container"></canvas>
+            <h3>VS Code (95%)</h3>
+        </div>
+       
+        
+        <div class="skill-card">
+            <img src="./powerbi.jpeg" alt="Power BI" class="skill-logo">
+            <canvas id="powerbiChart" class="chart-container"></canvas>
+            <h3>Power BI (95%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./tableau.jpeg" alt="Tableau" class="skill-logo">
+            <canvas id="tableauChart" class="chart-container"></canvas>
+            <h3>Tableau (65%)</h3>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Soft Skills -->
+        <!-- Soft Skills -->
+<div class="skills-section">
+    <h2>Soft Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <img src="./communication.jpeg" alt="Communication" class="skill-logo">
+            <canvas id="communicationChart" class="chart-container"></canvas>
+            <h3>Communication (90%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./ps.jpeg" alt="Problem-Solving" class="skill-logo">
+            <canvas id="problemSolvingChart" class="chart-container"></canvas>
+            <h3>Problem-Solving (85%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./teamwork.jpeg" alt="Teamwork" class="skill-logo">
+            <canvas id="teamworkChart" class="chart-container"></canvas>
+            <h3>Teamwork (95%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./time.jpeg" alt="Time Management" class="skill-logo">
+            <canvas id="timeManagementChart" class="chart-container"></canvas>
+            <h3>Time Management (99%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./adapt.jpeg" alt="Adaptability" class="skill-logo">
+            <canvas id="adaptabilityChart" class="chart-container"></canvas>
+            <h3>Adaptability (85%)</h3>
+        </div>
+        <div class="skill-card">
+            <img src="./creativity.jpeg" alt="Creativity" class="skill-logo">
+            <canvas id="creativityChart" class="chart-container"></canvas>
+            <h3>Creativity (85%)</h3>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+
+const chartOptions = {
+    cutout: '75%',  // Increased from '70%' to '75%' to make the chart appear thinner
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: { display: false }
+    }
+};
+
+
+
+      const skillsData = {
+    htmlCssChart: 85,
+    jsChart: 55,
+    pythonChart: 60,
+    reactChart: 40,
+    javaChart: 80,
+    bootstrapChart: 85,
+    sqlChart: 70,
+    gitChart: 75,
+    vscodeChart: 95,
+    
+    
+    powerbiChart: 95,
+    tableauChart: 65,
+    communicationChart: 90,
+    problemSolvingChart: 85,
+    teamworkChart: 95,
+    timeManagementChart: 99,
+    adaptabilityChart: 85,
+    creativityChart: 85
+};
+
+
+
+
+
+        function createChart(canvasId, skillLevel) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Skill Level', 'Remaining'],
+                    datasets: [{
+                        data: [skillLevel, 100 - skillLevel],
+                        backgroundColor: ['#00ff88', '#333'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    cutout: '70%',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Object.keys(skillsData).forEach(skill => createChart(skill, skillsData[skill]));
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    Object.keys(skillsData).forEach(skill => {
+        createChart(skill, skillsData[skill]);
+
+        // Find the corresponding skill card and update its title
+        const skillCard = document.getElementById(skill).closest('.skill-card');
+        if (skillCard) {
+            const title = skillCard.querySelector('h3');
+            title.textContent += ` (${skillsData[skill]}%)`; // Append percentage
+        }
+        
+    });
+    
+});
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 1000 } },
+                color: { value: "#00ff88" },  /* Glowing Neon Green */
+                shape: { type: "circle" },
+                opacity: { value: 0.7, random: false, anim: { enable: true, speed: 0.5 } }, 
+                size: { value: 6, random: true, anim: { enable: true, speed: 2, size_min: 3 } },
+                line_linked: { 
+                    enable: true, 
+                    distance: 180,  /* Increased line length */
+                    color: "#00ffaa", 
+                    opacity: 0.6, /* Increased opacity for bolder lines */
+                    width: 2.5 /* Thicker lines */
+                },
+                move: { 
+                    enable: true, 
+                    speed: 1.5, 
+                    direction: "none", 
+                    random: false, 
+                    straight: false, 
+                    out_mode: "out", 
+                    attract: { enable: true, rotateX: 1000, rotateY: 1000 } /* Creates a polar effect */
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" }, 
+                    onclick: { enable: true, mode: "push" }
+                },
+                modes: {
+                    repulse: { distance: 120, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

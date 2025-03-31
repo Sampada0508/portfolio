@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sampada N S</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .contact-container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(0, 255, 136, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(124, 209, 169, 0.819);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .contact-item:hover {
+    background: rgba(0, 255, 136, 0.3);
+    transform: scale(1.08);
+    box-shadow: 0 0 12px #00ff88;
+}
+
+
+        .contact-item span {
+            font-weight: bold;
+            flex: 1;
+            text-align: left;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .resume-item {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.resume-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 12px 25px;
+    background: rgba(51, 209, 135, 0.59);
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(35, 45, 38, 0.943);
+    border: 2px solid transparent;
+    animation: glowBorder 1.5s infinite alternate;
+}
+@keyframes glowBorder {
+    0% { border-color: rgba(0, 255, 136, 0.5); box-shadow: 0 0 10px #00ff88; }
+    100% { border-color: rgba(0, 255, 136, 1); box-shadow: 0 0 20px #00ff88; }
+}
+/* Hover Effect */
+.resume-item a:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00ff88;
+}
+
+       .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 5vw; /* Responsive gap */
+    flex-wrap: wrap; /* Ensures wrapping on small screens */
+}
+
+.social-links a {
+    color: white;
+    font-size: 3vw; /* Adjusts based on screen width */
+    width: 5vw; /* Responsive circle size */
+    height: 5vw;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(166, 210, 187, 0.958); /* Shadow adjusts with screen */
+    min-width: 50px; /* Ensures a minimum size */
+    min-height: 50px;
+}
+
+/* Ensuring the icon fully fills the circle */
+.social-links a i {
+    font-size: 2.5vw;
+    line-height: 5vw;
+    min-font-size: 24px; /* Ensures icons remain readable */
+}
+
+/* Hover Effect */
+.social-links a:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.2) rotate(0deg);
+    box-shadow: 0 0 1.5vw #00ff88;
+}
+
+
+
+.social-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        .contact-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    background: rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 10px #00ff88;
+}
+.contact-form input, 
+.contact-form textarea {
+    color: white; /* Text inside inputs and textarea */
+}
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* White with slight transparency */
+}
+
+
+.contact-form label {
+    color: white; /* Labels for input fields */
+}
+
+
+
+        .contact-form input {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #00ff88;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: white;
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        body {
+    background: black;
+    overflow: hidden;
+}
+
+.triangle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keeps it behind the content */
+}
+
+.triangle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 136, 0.5);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    filter: blur(25px);
+    animation: floatTriangle linear infinite;
+}
+
+@keyframes floatTriangle {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(60vh) rotate(360deg); opacity: 0.5; }
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    background: rgba(0, 255, 136, 0.2); /* Greenish glow */
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between arrow and text */
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    border: 2px solid rgba(217, 234, 226, 0.888);
+}
+
+/* Icon Style */
+
+
+
+/* Hover Effect */
+.back-button:hover {
+    background: #00ff88;
+    color: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff88;
+    border-color: white;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 600px) {
+    .back-button {
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .social-links a {
+        font-size: 8vw;
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .contact-container {
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .resume-item a {
+        padding: 10px 20px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">
+        ← Back
+    </a>
+    
+
+    <div class="contact-container">
+        <h1>Contact Me</h1>
+
+        <!-- Email (Click to Copy) -->
+        <div class="contact-item" onclick="copyEmail()">
+            <span>📧 Email:</span> 
+            <span id="sampadasathish0508@gmail.com">sampadasathish0508@gmail.com</span>
+        </div>
+
+        <!-- Phone (Click to Call) -->
+        <div class="contact-item">
+            <span>📞 Phone:</span> 
+            <a href="tel:+919019869799">+91 9019869799</a>
+        </div>
+
+        <!-- Location (Google Maps Link) -->
+        <div class="contact-item">
+            <span>📍 Location:</span> 
+            <a href="https://www.google.com/maps/place/Princess+stay+pg+for+girls/@12.9080641,77.5642279,21z/data=!4m14!1m7!3m6!1s0x3bae15928076413d:0xa165f1b61315b84d!2sPrincess+stay+pg+for+girls!8m2!3d12.9079769!4d77.5645136!16s%2Fg%2F11v01xntmq!3m5!1s0x3bae15928076413d:0xa165f1b61315b84d!8m2!3d12.9079769!4d77.5645136!16s%2Fg%2F11v01xntmq?entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" target="_blank">Bangalore, India</a>
+        </div>
+
+        <!-- Social Media Links with Icons -->
+        <div class="social-links">
+            <a href="https://github.com/Sampada0508" target="_blank">
+                <img src="./gitlogo.jpeg" alt="GitHub" class="social-logo">
+            </a>
+            <a href="https://www.linkedin.com/in/sampada-n-s-8840b8283/" target="_blank">
+                <img src="./linlogo.jpeg" alt="LinkedIn" class="social-logo">
+            </a>
+            <a href="https://www.instagram.com/sampadans_0508/" target="_blank">
+                <img src="./instalogo.jpeg" alt="Instagram" class="social-logo">
+            </a>
+        </div>
+        
+        <!-- Contact Form -->
+        <form class="contact-form" onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="your message" placeholder="Your message" required>
+            
+            
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Resume Link -->
+       <!-- Resume Link -->
+<div class="resume-item">
+    <a href="./SAMPADA RESUME (2).pdf" target="_blank">My Resume</a>
+</div>
+
+    </div>
+
+    <script>
+        function copyEmail() {
+            const emailText = document.getElementById("email-text").innerText;
+            navigator.clipboard.writeText(emailText).then(() => {
+                alert("Email copied: " + emailText);
+            });
+        }
+    </script>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); 
+            alert("Thank you! Your message has been sent.");
+        }
+        </script>
+   <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    const triangleContainer = document.createElement("div");
+    triangleContainer.classList.add("triangle-container");
+    document.body.appendChild(triangleContainer);
+
+    function createTriangle() {
+        const triangle = document.createElement("div");
+        triangle.classList.add("triangle");
+        
+        // Random positions
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        const randomSize = Math.random() * 80 + 30; // Bigger triangles (30px - 110px)
+        const randomDuration = Math.random() * 2 + 1; // Duration between 4s - 10s
+
+        triangle.style.left = `${randomX}px`;
+        triangle.style.top = `${randomY}px`;
+        triangle.style.width = `${randomSize}px`;
+        triangle.style.height = `${randomSize}px`;
+        triangle.style.animationDuration = `${randomDuration}s`;
+
+        triangleContainer.appendChild(triangle);
+
+        setTimeout(() => {
+            triangle.remove();
+        }, randomDuration * 1000);
+    }
+
+    // Generate more triangles at a faster rate
+    setInterval(() => {
+        for (let i = 0; i < 5; i++) { // Increased number of triangles per interval
+            createTriangle();
+        }
+    }, 500); // Reduced interval time for more frequent appearance
+});
+
+
+    </script>
+
+
+</body>
+</html>
+
