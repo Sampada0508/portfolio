@@ -23,7 +23,7 @@
 - HTML  
 - CSS  
 - JavaScript  
-- React *(if used)*  
+- React 
 
 
 ## 📸 Project Preview
